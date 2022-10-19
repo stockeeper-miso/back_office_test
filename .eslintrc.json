@@ -1,0 +1,61 @@
+{
+  "extends": ["react-app", "airbnb"],
+  "plugins": ["react", "jsx-a11y", "import"],
+  "rules": {
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function" }
+    ],
+    "arrow-body-style": "off",
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "no-shadow": ["error", { "hoist": "functions" }],
+    "react/require-default-props": "off",
+    "react/prop-types": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "parent",
+            "position": "before"
+          }
+        ]
+      }
+    ]
+  },
+  "globals": {
+    "React": "writable",
+    "document": false
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".ts", ".tsx", ".js", ".jsx"]
+      }
+    }
+  }
+}
